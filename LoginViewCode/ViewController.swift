@@ -8,10 +8,20 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var screen: LoginScreen?
+    
+    override func loadView(){
+        self.screen = LoginScreen()
+        self.view = self.screen
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
 
